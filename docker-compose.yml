@@ -1,0 +1,31 @@
+version: "3.8"
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  db-1:
+    container_name: postgres-db-typeorm
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: typeorm
+      POSTGRES_USER: typeorm
+      POSTGRES_PASSWORD: typeorm
+    ports:
+      - 5434:5432
+  db-2:
+    container_name: postgres-db-prisma
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: prisma
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    ports:
+      - 5435:5432
