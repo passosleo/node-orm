@@ -10,7 +10,7 @@ export function buildApp() {
     openapi: {
       openapi: "3.0.0",
       info: {
-        title: "Node ORM",
+        title: "TypeORM POC",
         version: "1.0.0",
       },
       components: {
@@ -27,7 +27,7 @@ export function buildApp() {
 
   app.register(fastifySwaggerUI, {
     theme: {
-      title: "Node ORM",
+      title: "TypeORM POC",
     },
     routePrefix: "/swagger-ui",
   });
