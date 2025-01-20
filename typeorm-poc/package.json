@@ -2,26 +2,25 @@
   "name": "typeorm-poc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "dev": "tsx watch src/main.ts",
     "start": "node ./dist/main.js",
     "build": "tsup src --out-dir dist"
   },
+  "keywords": [],
   "author": "Lighthouse",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "fastify": "^5.2.1",
-    "pg": "^8.13.1",
-    "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20",
-    "zod": "^3.24.1"
+    "@fastify/swagger": "^8.15.0",
+    "@fastify/swagger-ui": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7",
-    "tsup": "^8.3.5",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "@types/node": "^22.4.1",
+    "tsup": "^8.2.4",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
   }
 }
