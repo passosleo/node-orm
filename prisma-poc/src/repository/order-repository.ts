@@ -26,6 +26,9 @@ export class OrderRepository {
             },
           },
         },
+        include: {
+          shippingAddress: true,
+        },
       });
 
       const savedOrderItems = await Promise.all(
@@ -34,6 +37,13 @@ export class OrderRepository {
             data: {
               ...item,
               orderId: savedOrder.id,
+            },
+            include: {
+              order: {
+                include: {
+                  shippingAddress: true,
+                },
+              },
             },
           })
         )
