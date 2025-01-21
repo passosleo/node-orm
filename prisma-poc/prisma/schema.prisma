@@ -12,3 +12,42 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Order {
+  id                Int              @id @default(autoincrement())
+  client            String
+  totalPrice        Decimal          @db.Decimal(10, 2)
+  status            String           @default("Pendente")
+  createAt          DateTime         @default(now()) @map("create_at")
+  updatedAt         DateTime         @updatedAt @map("updated_at")
+  shippingAddress   ShippingAddress? @relation(fields: [shippingAddressId], references: [id], onDelete: Cascade)
+  shippingAddressId Int?
+  items             OrderItems[]
+
+  @@map("tb_orders")
+}
+
+model OrderItems {
+  id          Int     @id @default(autoincrement())
+  productName String
+  quantity    Int
+  unitPrice   Decimal @db.Decimal(10, 2)
+  orderId     Int
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@map("tb_order_items")
+}
+
+model ShippingAddress {
+  id            Int     @id @default(autoincrement())
+  street        String
+  number        String
+  complement    String?
+  neighboorhood String
+  city          String
+  state         String
+  zipCode       String  @db.VarChar(11)
+  orders        Order[]
+
+  @@map("tb_shipping_address")
+}
