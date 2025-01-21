@@ -1,11 +1,11 @@
 const { Client } = require("pg");
 
 const client = new Client({
-  user: "user",
+  user: "prisma",
   host: "localhost",
-  database: "database",
-  password: "password",
-  port: 5437,
+  database: "prisma",
+  password: "prisma",
+  port: 5436,
 });
 
 client

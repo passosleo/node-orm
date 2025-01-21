@@ -18,8 +18,8 @@ model Order {
   client            String
   totalPrice        Decimal          @db.Decimal(10, 2)
   status            String           @default("Pendente")
-  createAt          DateTime         @default(now()) @map("create_at")
-  updatedAt         DateTime         @updatedAt @map("updated_at")
+  createAt          DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
   shippingAddress   ShippingAddress? @relation(fields: [shippingAddressId], references: [id], onDelete: Cascade)
   shippingAddressId Int?
   items             OrderItems[]
