@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "cf44412a-0a2e-4c5d-8390-49a3db2438b6",
+		"name": "Node ORM POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20127795"
+	},
+	"item": [
+		{
+			"name": "prisma-poc",
+			"item": [
+				{
+					"name": "Buscar Pedido Pelo Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": \"Cliente Exemplo\",\r\n  \"shippingaddress\": {\r\n    \"street\": \"Rua Exemplo\",\r\n    \"number\": \"123\",\r\n    \"city\": \"São Paulo\",\r\n    \"state\": \"SP\",\r\n    \"complement\": \"\",\r\n    \"zipCode\": \"01001-000\",\r\n    \"neighboorhood\": \"teste\"\r\n  },\r\n  \"items\": [\r\n    {\r\n      \"productName\": \"Produto A\",\r\n      \"quantity\": 2,\r\n      \"unitPrice\": 50\r\n    },\r\n    {\r\n      \"productName\": \"Produto B\",\r\n      \"quantity\": 1,\r\n      \"unitPrice\": 100\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "typeorm-poc",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": \"Cliente Exemplo\",\r\n  \"shippingaddress\": {\r\n    \"street\": \"Rua Exemplo\",\r\n    \"number\": \"123\",\r\n    \"city\": \"São Paulo\",\r\n    \"state\": \"SP\",\r\n    \"complement\": \"\",\r\n    \"zipCode\": \"01001-000\",\r\n    \"neighboorhood\": \"teste\"\r\n  },\r\n  \"items\": [\r\n    {\r\n      \"productName\": \"Produto A\",\r\n      \"quantity\": 2,\r\n      \"unitPrice\": 50\r\n    },\r\n    {\r\n      \"productName\": \"Produto B\",\r\n      \"quantity\": 1,\r\n      \"unitPrice\": 100\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Pedido Pelo Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

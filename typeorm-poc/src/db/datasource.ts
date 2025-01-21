@@ -6,11 +6,11 @@ import { OrderItems } from "../entities/order-items";
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432 ,
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5435,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  synchronize: true, 
+  synchronize: true,
   logging: true,
-  entities: [Order, ShippingAddress, OrderItems]
+  entities: [Order, ShippingAddress, OrderItems],
 });
