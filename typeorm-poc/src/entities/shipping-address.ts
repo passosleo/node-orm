@@ -5,24 +5,24 @@ export class ShippingAddress {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
-  rua!: string;
+  @Column("varchar")
+  street!: string;
 
-  @Column()
-  numero!: string;
+  @Column("varchar")
+  number!: string;
 
-  @Column()
-  complemento?: string;
+  @Column("varchar")
+  complement?: string;
 
-  @Column()
-  bairro!: string;
+  @Column("varchar")
+  neighboorhood!: string;
 
-  @Column()
-  cidade!: string;
+  @Column("varchar")
+  city!: string;
 
-  @Column()
-  estado!: string;
+  @Column("varchar")
+  state!: string;
 
-  @Column()
-  cep!: string;
+  @Column("varchar", { length: 11})
+  zipCode!: string;
 }

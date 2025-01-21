@@ -7,25 +7,25 @@ export class Order {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
-  cliente!: string;
+  @Column("varchar")
+  client!: string;
 
   @Column("decimal", { precision: 10, scale: 2 })
-  valorTotal!: number;
+  totalPrice!: number;
 
-  @Column({ default: "pendente" })
+  @Column("varchar", { default: "Pendente" })
   status!: string;
 
   @CreateDateColumn()
-  criadoEm!: Date;
+  createAt!: Date;
 
   @UpdateDateColumn()
-  atualizadoEm!: Date;
+  updatedAt!: Date;
 
   @OneToOne(() => ShippingAddress, { cascade: true })
   @JoinColumn()
-  enderecoEntrega!: ShippingAddress;
+  shippingAddress!: ShippingAddress;
 
   @OneToMany(() => OrderItems, (orderItem) => orderItem.order, { cascade: true })
-  itens!: OrderItems[];
+  items!: OrderItems[];
 }

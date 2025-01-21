@@ -2,8 +2,11 @@ import "reflect-metadata";
 import "dotenv/config";
 import fastify from "fastify";
 import { AppDataSource } from "./db/datasource";
+import { orderRoutes } from "./routes/order-routes";
 
 const app = fastify();
+
+app.register(orderRoutes);
 
 const startServer = async () => {
   try {

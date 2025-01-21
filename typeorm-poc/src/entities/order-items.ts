@@ -8,14 +8,14 @@ export class OrderItems {
   id!: number;
 
   @Column("varchar")
-  produto!: string;
+  productName!: string;
 
   @Column("int")
-  quantidade!: number;
+  quantity!: number;
 
   @Column("decimal", { precision: 10, scale: 2 })
-  precoUnitario!: number;
+  unitPrice!: number;
 
-  @ManyToOne(() => Order, (order) => order.itens, { onDelete: "CASCADE" })
+  @ManyToOne(() => Order, (order) => order.items, { onDelete: "CASCADE" })
   order!: Order;
 }
